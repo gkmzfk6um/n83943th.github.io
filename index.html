@@ -1,87 +1,123 @@
 <!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.5.95/css/materialdesignicons.min.css"
-        rel="stylesheet">
-
-
-    <title>Nachhilfee</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Art Gallery</title>
     <style>
-        * {
-            font-family: liberation sans, sans-serif !important;
-            margin: 0%;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #1a1a1a, #333333);
+        font-family: Arial, sans-serif;
+      }
 
-        .fee {
-            font-family: 'Lucida handwriting', cursive !important;
-        }
+      .gallery {
+        padding: 1em;
+        /* Masonry-like layout using CSS columns */
+        column-count: 3;
+        column-gap: 1em;
+      }
 
-        header {
-            background-color: #739fd0;
-            width: 100%;
-            padding: 0%;
-        }
+      .image-item {
+        position: relative;
+        break-inside: avoid;
+        margin-bottom: 1em;
+        opacity: 0;
+        /* Slide in from the bottom */
+        animation: slideIn 1.5s ease forwards;
+      }
 
-        h1 {
-            font-size: 3rem !important;
-            color: white;
-        }
+      .image-item img {
+        width: 100%;
+        height: auto; /* Preserves aspect ratio */
+        display: block;
+        border-radius: 4px;
+      }
 
-        h3 {
-            color: white;
-        }
+      .download-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: gray;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 3px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 14px;
+      }
 
-        h2,
-        h1,
-        h3,
-        h4 {
-            margin-left: 1rem !important;
-        }
+      .image-item:hover .download-btn {
+        opacity: 1;
+      }
 
-        img {
-            height: 3rem !important;
-            width: auto;
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
 
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .gallery {
+          column-count: 2;
         }
+      }
 
-        .mdi {
-            color: #50ca3b;
+      @media (max-width: 480px) {
+        .gallery {
+          column-count: 1;
         }
-        a{
-            color: #739fd0;
-        }
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <div class="gallery"></div>
 
-<body>
-    <header>
-        <h1>Nachhil<span class="fee">fee</span> <img src="/favicon.svg" alt="🧚‍♀️"></h1>
-        <h3>Nachhilfeunterricht von der 1. bis zur 4. Klasse</h3>
-    </header>
-    <div style="display: flex; margin-top: 1rem; flex-direction: column;" justify-content="center">
-        <h2 class="d-flex align-items-center">
-            <span class="mdi mdi-account" alt="Bei"></span>
-            <span id="l45jb4oli5" class="ml-2">0</span>
-        </h2>
-        <h2 class="d-flex align-items-center">
-            <span class="mdi mdi-whatsapp" alt="Nummer:"></span>
-            <a id="3vnu3t4lk" class="ml-2" href="#">0</a>
-        </h2>
-        <h2 class="d-flex align-items-center">
-            <span class="mdi mdi-email" alt="E-Mail: "></span><span id="gjdlfkjg" class="ml-2">0</span>
-        </h2>
-        <h4>✨ Alles weitere nach Absprache</h4>
-        <script>(function(){var _0x5f4e=['\x61\x33\x4a\x70\x5a\x57\x64\x6c\x63\x69\x31\x7a\x59\x57\x31\x35','\x5a\x32\x31\x34\x4c\x6d\x52\x6c','\x4b\x7a\x51\x35\x49\x44\x45\x33\x4d\x79\x41\x7a\x4d\x7a\x55\x67\x4f\x44\x45\x78\x4d\x67\x3d\x3d','\x55\x32\x46\x73\x62\x32\x31\x6c\x49\x45\x73\x75','\x4e\x44\x6b\x78\x4e\x7a\x4d\x35\x4d\x7a\x55\x34\x4d\x54\x45\x79'];var _0x3b2c=function(_0x5f4e){return atob(_0x5f4e)};document.addEventListener('DOMContentLoaded',function(){var _0x2c4e=_0x3b2c(_0x5f4e[0x0]);var _0x1a3f=_0x3b2c(_0x5f4e[0x1]);var _0x4d7b=_0x3b2c(_0x5f4e[0x2]);var _0x7d9e=_0x3b2c(_0x5f4e[0x3]);var _0x9a2f=_0x3b2c(_0x5f4e[0x4]);document.getElementById('l45jb4oli5').textContent=_0x7d9e;document.getElementById('3vnu3t4lk').textContent=_0x4d7b;document.getElementById('3vnu3t4lk').href='https://wa.me/'+_0x9a2f;document.getElementById('gjdlfkjg').innerHTML='<a href="mailto:'+_0x2c4e+'@'+_0x1a3f+'">'+_0x2c4e+'@'+_0x1a3f+'</a>';});})();
-        </script>
+    <script>
+      const images = [
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCdxj6qXAGeW0C4lzqmB97uA3UTRjMY8PswNkJ1",
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCd6d4hgQwSe0QrLiNnV5IO1pMtgBuTFx78qjCs",
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCd0WB7AQi3fGlZtTq5WRNvdyrgh2EHC7F3LaAu",
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCdP6llwN0R8WemhtjVCM19TBGyQAx4XH7Ncnof",
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCdrPuQc9ys5DqWzMACyuNjJk1iGUdVgtO8ZPQX",
+        "https://pnj6i4tj3g.ufs.sh/f/RiH3sMpSQNCdy04AptFzeYcnUD9tGTlEhuprF1ZN27QPyX5V"
+      ];
 
+      const gallery = document.querySelector(".gallery");
 
+      images.forEach((src, index) => {
+        const div = document.createElement("div");
+        div.className = "image-item";
+        // Stagger the slide-in animation slightly for each image
+        div.style.animationDelay = `${index * 0.2}s`;
 
-</body>
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Art Image";
 
+        const downloadLink = document.createElement("a");
+        downloadLink.className = "download-btn";
+        downloadLink.href = src;
+        // The 'download' attribute triggers download
+        downloadLink.setAttribute("download", "");
+        downloadLink.innerText = "Download";
+
+        div.appendChild(img);
+        div.appendChild(downloadLink);
+
+        gallery.appendChild(div);
+      });
+    </script>
+  </body>
 </html>
